@@ -1,0 +1,31 @@
+.keyboard{
+ width: 100%;
+ display: grid;
+ grid-template-columns: repeat(4,1fr);
+ gap: 0.5rem;
+}
+.btn{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#333333 ;
+  border: none;
+  color: aliceblue;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.light{
+  background-color:#a5a5a5 ;
+  color: #0c0c0c;
+}
+.operation{
+  background-color:#fd9503 ;
+  color: aliceblue;
+}
+.btn:hover{
+  box-shadow: 0px 0px 0px 1px rgba(255,255,255,0.5);
+}
