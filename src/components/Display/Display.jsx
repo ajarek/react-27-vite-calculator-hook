@@ -1,12 +1,12 @@
 import React from 'react'
 import './Display.css'
 
-function Display() {
+function Display({ children }) {
   return (
     <div
       className={'display'}
     >
-      0
+      {children}
 
     </div>
   )

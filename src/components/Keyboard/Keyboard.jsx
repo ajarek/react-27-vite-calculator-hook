@@ -1,30 +1,36 @@
 import React from 'react'
 import './Keyboard.css'
 
-function Keyboard() {
+function Keyboard(props) {
+  const { onClick, onClear, changeValue } = props
+  const numbers = [7, 8, 9, 4, 5, 6, 1, 2, 3, 0, '.']
+
   return (
     <div
       className={'keyboard'}
     >
-      <button className={'btn light'} type={'button'}>AC</button>
-      <button className={'btn light'} type={'button'}>+/-</button>
-      <button className={'btn light'} type={'button'}>%</button>
-      <button className={'btn operation'} type={'button'}>/</button>
-      <button className={'btn'} type={'button'}>7</button>
-      <button className={'btn'} type={'button'}>8</button>
-      <button className={'btn'} type={'button'}>9</button>
-      <button className={'btn operation'} type={'button'}>*</button>
-      <button className={'btn'} type={'button'}>4</button>
-      <button className={'btn'} type={'button'}>5</button>
-      <button className={'btn'} type={'button'}>6</button>
-      <button className={'btn operation'} type={'button'}>-</button>
-      <button className={'btn'} type={'button'}>1</button>
-      <button className={'btn'} type={'button'}>2</button>
-      <button className={'btn'} type={'button'}>3</button>
-      <button className={'btn operation'} type={'button'}>+</button>
-      <button className={'btn null'} type={'button'}>0</button>
-      <button className={'btn'} type={'button'}>.</button>
-      <button className={'btn'} type={'button'}>=</button>
+      <div className={'section1'}>
+        <button type={'button'} className={'btn light'} onClick={onClear}>AC</button>
+        <button type={'button'} className={'btn light'} onClick={changeValue}>+/-</button>
+        <button type={'button'} className={'btn light'}>%</button>
+        {numbers.map((item) => (
+          <button
+            type={'button'}
+            key={item}
+            className={item === 0 ? 'btn btn-null' : 'btn '}
+            onClick={onClick}
+          >
+            {item}
+          </button>
+        ))}
+      </div>
+      <div className={'section2'}>
+        <button type={'button'} className={'btn operation'}>/</button>
+        <button type={'button'} className={'btn operation'}>*</button>
+        <button type={'button'} className={'btn operation'}>-</button>
+        <button type={'button'} className={'btn operation'}>+</button>
+        <button type={'button'} className={'btn operation'}>=</button>
+      </div>
     </div>
   )
 }

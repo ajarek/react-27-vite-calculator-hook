@@ -1,7 +1,7 @@
 .keyboard{
  width: 100%;
  display: grid;
- grid-template-columns: repeat(4,1fr);
+ grid-template-columns: 3fr 1fr;
  gap: 0.5rem;
 }
 .btn{
@@ -17,6 +17,22 @@
   color: aliceblue;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+}
+.btn-null{
+  width:calc(120px + 0.5rem);
+  border-radius: 40px;
+  grid-column: 1/3;
+  grid-row: 5/6 ;
+}
+.section1{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 0.5rem;
+}
+.section2{
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  gap: 0.5rem;
 }
 .light{
   background-color:#a5a5a5 ;
