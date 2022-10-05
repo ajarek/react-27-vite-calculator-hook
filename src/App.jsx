@@ -26,6 +26,7 @@ function App() {
     setResult(null)
   }
   const changeValue = () => {
+    if (value.length === 0 && nextValue.length === 0) { return }
     if (operation.length === 0) {
       setValue((String((Number(value.join('')) * -1))).split(''))
     } else {
@@ -44,6 +45,9 @@ function App() {
     setNextValue([])
     setOperation([])
   }
+  const calculatePercentage = () => {
+    if (nextValue) { setNextValue(Number(nextValue.join('')) / 100) }
+  }
   return (
     <div
       className={'App'}
@@ -59,6 +63,7 @@ function App() {
         changeValue={changeValue}
         changeOperation={changeOperation}
         equal={calculate}
+        calculatePercentage={calculatePercentage}
       />
     </div>
   )

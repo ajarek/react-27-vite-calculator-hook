@@ -3,7 +3,7 @@ import './Keyboard.css'
 
 function Keyboard(props) {
   const {
-    onClick, onClear, changeValue, changeOperation, equal,
+    onClick, onClear, changeValue, changeOperation, equal, calculatePercentage,
   } = props
   const numbers = [7, 8, 9, 4, 5, 6, 1, 2, 3, 0, '.']
   const operation = ['/', '*', '-', '+']
@@ -14,7 +14,7 @@ function Keyboard(props) {
       <div className={'section1'}>
         <button type={'button'} className={'btn light'} onClick={onClear}>AC</button>
         <button type={'button'} className={'btn light'} onClick={changeValue}>+/-</button>
-        <button type={'button'} className={'btn light'}>%</button>
+        <button type={'button'} className={'btn light'} onClick={calculatePercentage}>%</button>
         {numbers.map((item) => (
           <button
             type={'button'}
