@@ -34,13 +34,16 @@ function App() {
     }
   }
   const changeOperation = (e) => {
+    if (result) {
+      setValue([...value, result])
+    }
     if (operation.length > 1) { return }
     setOperation([...operation, e.target.innerHTML])
   }
   const calculate = () => {
     const arr = value.concat(operation, nextValue)
     // eslint-disable-next-line no-eval
-    setResult(eval(arr.join('')))
+    setResult((eval(arr.join(''))))
     setValue([])
     setNextValue([])
     setOperation([])
