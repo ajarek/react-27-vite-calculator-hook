@@ -43,12 +43,9 @@ function App() {
   const calculate = () => {
     if (nextValue.length === 0) return
     const arr = value.concat(operation, nextValue)
-    const len = String(eval(arr.join(''))).length
-    if (len > 8) {
-      setResult(`${((eval(arr.join(''))) / 10 ** (len - 1))}e+${len} `)
-    } else {
-      setResult((eval(arr.join(''))))
-    }
+
+    setResult((eval(arr.join(''))))
+
     setValue([])
     setNextValue([])
     setOperation([])
